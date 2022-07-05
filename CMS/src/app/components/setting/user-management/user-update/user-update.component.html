@@ -1,0 +1,95 @@
+<app-breadcrumb [title]="'User Management'" [items]="['Settings']" [active_item]="'User'"></app-breadcrumb>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5>User Add New</h5><span>lorem ipsum dolor sit amet, consectetur adipisicing elit</span>
+                    <button class="btn btn-primary back" (click)="back()">
+                        <i class="fa fa-angle-left"></i> Back
+                    </button>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12">
+                            <h1 class="text-center text-primary text-uppercase">Information</h1>
+                            <div class="form-group">
+                                <div class="avatar-upload">
+                                    <div class="avatar-edit">
+                                        <input type='file' id="imageUpload" accept="image/*"
+                                            (change)="uploadAvatar($event)" />
+                                        <label for="imageUpload"></label>
+                                    </div>
+                                    <div class="avatar-preview">
+                                        <div id="imagePreview" [style.backgroundImage]="'url('+ user.avatar +')'"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <form class="row" #addUserForm="ngForm">
+                                <div class="form-group col-lg-6 col-md-12">
+                                    <label class="badge badge-primary font-lable">User Name</label>
+                                    <input type="text" class="form-control border-primary" name="username" required
+                                        autocomplete="off" [(ngModel)]="user.userName">
+                                </div>
+                                <div class="form-group col-lg-6 col-md-12">
+                                    <label class="badge badge-primary font-lable">Name</label>
+                                    <input type="text" class="form-control border-primary" name="name" required
+                                        autocomplete="off" [(ngModel)]="user.name">
+                                </div>
+                                <div class="form-group col-lg-6 col-md-12">
+                                    <label class="badge badge-primary font-lable">Phone</label>
+                                    <input type="tel" class="form-control border-primary" name="phone"
+                                        autocomplete="off" [(ngModel)]="user.phoneNumber">
+                                </div>
+
+                                <div class="form-group col-lg-6 col-md-12">
+                                    <label class="badge badge-primary font-lable">Email</label>
+                                    <input type="email" class="form-control border-primary" name="email" required
+                                        autocomplete="off" [(ngModel)]="user.email">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <h1 class="text-center text-primary text-uppercase">Roles</h1>
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                <div class="custom-control text-left">
+                                                    <input type="checkbox" class="form-check-input" id="all-roles"
+                                                        [(ngModel)]="checkedAll" (click)="checkedAllRole()">
+                                                </div>
+                                            </th>
+                                            <th>Role Name</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let role of user.roles">
+                                            <td>
+                                                <div class="custom-control">
+                                                    <input type="checkbox" class="form-check-input" [id]="role.id"
+                                                        [checked]="role.isActive" [(ngModel)]="role.isActive"
+                                                        (click)="checkedRole(role)">
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <label class="form-check-label" [for]="role.id">{{role.name}}</label>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button type="button" class="btn btn-success" (click)="save()" [disabled]='addUserForm.invalid'>
+                        <i class="fa fa-check"></i>
+                        Save
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,60 @@
+/*
+  This is a "Solution Style" tsconfig.json file, and is used by editors and TypeScript’s language server to improve development experience.
+  It is not intended to be used to perform a compilation.
+
+  To learn more about this file see: https://angular.io/config/solution-tsconfig.
+*/
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@services/*": [
+        "src/app/_core/_services/*"
+      ],
+      "@models/*": [
+        "src/app/_core/_models/*"
+      ],
+      "@constants/*": [
+        "src/app/_core/_constants/*"
+      ],
+      "@utilities/*": [
+        "src/app/_core/_helpers/utilities/*"
+      ],
+      "@guards/*": [
+        "src/app/_core/_guards/*"
+      ],
+      "@params/*": [
+        "src/app/_core/_helpers/params/*"
+      ],
+      "@resolvers/*": [
+        "src/app/_core/_resolvers/*"
+      ],
+      "@env/*": [
+        "src/environments/*"
+      ]
+    },
+    "outDir": "./dist",
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "es2020",
+    "lib": [
+      "es2018",
+      "dom"
+    ]
+  },
+  "files": [],
+  "references": [
+    {
+      "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "./tsconfig.spec.json"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+/* ---------------------
+ *** Vendors Scss ***
+-----------------------*/
+
+@import "vendors/chartist";
+@import "vendors/dropzone";
+@import "vendors/scrollable";
+@import "vendors/sticky";
+@import "vendors/todo";
+
+/* Dropzone */
+@import "~dropzone/dist/min/dropzone.min.css";
+
+/* Wizard */
+@import "~angular-archwizard/archwizard.scss";
+
+
+/* Scrollbar */
+@import "~perfect-scrollbar/css/perfect-scrollbar.css";
+
+/* Ng-select */
+@import "~@ng-select/ng-select/scss/default.theme.scss";
+
+/* Datetime */
+@import "~ng-pick-datetime/assets/style/picker.min.css";
+
+/* Emoji */
+@import "~@ctrl/ngx-emoji-mart/picker";
+
+/* ---------------------
+	*** Theme Scss ***
+-----------------------*/
+@import "~animate.css/animate.min.css";
+@import "~bootstrap/scss/bootstrap";
+@import "style";
+@import "responsive";
+
+

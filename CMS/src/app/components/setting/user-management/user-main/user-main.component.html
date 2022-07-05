@@ -1,0 +1,31 @@
+<app-breadcrumb [title]="'User Management'" [items]="['Settings']" [active_item]="'User'"></app-breadcrumb>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <h5>User Main</h5><span>lorem ipsum dolor sit amet, consectetur adipisicing elit</span>
+          <button class="btn btn-success add-new" (click)="addNew()">
+            <i class="fa fa-plus"></i> Add new
+          </button>
+        </div>
+        <div class="card-body">
+          <div class="container-image row">
+            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-4" *ngFor="let user of dataUser">
+              <div class="card-image">
+                <div class="imgBx">
+                  <img src="../../../../../assets/images/login/3.jpg">
+                  <h5>{{user.name}}</h5>
+                </div>
+                <div class="content">
+                  <i class="fa fa-cog mr-3" (click)="edit(user)"></i>
+                  <i class="fa fa-trash" (click)="delete(user)"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
